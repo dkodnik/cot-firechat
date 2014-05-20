@@ -16,6 +16,7 @@ $fireTokenGen = new Services_FirebaseTokenGenerator($cfg['plugin']['firechat']['
 $fireToken = $fireTokenGen->createToken(array('id' => $usr['id']));
 
 $out['firechat'] = <<<HTM
+<div id="firechat-wrapper"></div>
 <script type='text/javascript'>
   var firechatRef = new Firebase('https://{$cfg['plugin']['firechat']['firebase_app']}.firebaseio.com/chat');
   firechatRef.auth('{$fireToken}');
